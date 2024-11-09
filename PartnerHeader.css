@@ -1,0 +1,464 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    background-color: black; /* Schwarzer Hintergrund für den Header */
+    transition: background-color 0.3s ease;
+    height: 60px; /* Höhe des Headers reduziert auf 60px */
+}
+
+/* Sicherstellen, dass der Inhalt unterhalb des fixierten Headers beginnt */
+body {
+    padding-top: 80px; /* Platz einfügen, um den Header freizuhalten (Anpassung je nach Höhe des Headers) */
+    margin: 0px; /* Kein Standardabstand */
+    padding: 0px; /* Innenabstand um den Container herum */
+}
+
+h1{
+    font-size: 70px;
+    text-align: center;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    position: relative; /* Erforderlich für das Pseudo-Element */
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100%; /* Strichbreite auf 50% der Überschrift */
+    height: 4px; /* Dicke des Strichs */
+    background-color: gold; /* Farbe des Strichs */
+    margin: 10px auto 0; /* Abstand nach oben und unten */
+}
+
+p {
+    font-family: Arial;
+    font-size: 16px;
+    margin-left: 50px;
+}
+
+/* ------------------------- Header Styling ------------------------- */
+
+.header_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.Ducks-Logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: -90px; /* Anpassung: Logo etwas weiter nach unten verschoben */
+    right: 20px; /* Logo ganz rechts platziert */
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-color3);
+    text-decoration: none;
+    position: relative;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+nav a:hover {
+    color: var(--secondary-text-color);
+}
+
+nav a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: var(--text-color1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 150ms ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+#toggle_button {
+    display: none;
+}
+
+label[for="toggle_button"] {
+    display: none;
+}
+
+label[for="toggle_button"] span {
+    font-size: 40px;
+}
+
+/* Stil für die Überschrift "Unsere Partner" */
+.partner-heading {
+    text-align: center; /* Zentriert den Text */
+    font-size: 80px; /* Schriftgröße anpassen */
+    font-weight: bold; /* Fettdruck */
+    margin-bottom: 20px; /* Abstand zum Grid-Container */
+    color: #000000; /* Farbe der Schrift */
+    position: relative; /* Position für das Pseudo-Element */
+    margin: 50px; /* Kein Standardabstand */
+    padding: 20px; /* Innenabstand um den Container herum */
+}
+
+/* Pseudo-Element für den goldenen Unterstrich */
+.partner-heading::after {
+    content: ''; /* Inhalt für das Pseudo-Element */
+    display: block; /* Block-Element, um die Unterstreichung zu erstellen */
+    width: 100%; /* Breite auf 100% des Elternelements */
+    height: 4px; /* Dicke der Unterstreichung */
+    background-color: gold; /* Farbe der Unterstreichung */
+    position: absolute; /* Absolut positioniert in Bezug auf das Eltern-Element */
+    left: 50%; /* Am linken Rand auf die Mitte setzen */
+    transform: translateX(-50%); /* Verschiebung um die halbe Breite des Elements, um es zu zentrieren */
+}
+
+@media (max-width: 823px) {
+    nav {
+        position: absolute;   /* Positionierung anpassen */
+        top: -30px;
+        left: -20px;
+        background-color: #000000;
+        padding: 0;          /* Padding entfernen */
+        border-radius: 0 0 25px 0;
+        width: 40%;         /* Breite auf 100% setzen */
+    }
+
+    nav a {
+        font-size: 30px; /* Setze die gewünschte Schriftgröße für die Links */
+    }
+
+    nav ul {
+        display: none; /* Standardmäßig verstecken */
+        flex-direction: column; /* Vertikale Anordnung */
+        gap: 30px; /* Abstand zwischen den Links */
+        padding: 0; /* Kein Padding */
+        margin: 0; /* Kein Margin */
+    }
+
+    #toggle_button:checked + label + ul {
+        display: flex;
+        padding-top: 70px;  /* Hier kannst du Padding hinzufügen, wenn nötig */
+    }
+
+    /* Positionierung des Hamburger-Menüs auf kleinen Bildschirmen */
+    label[for="toggle_button"] {
+        display: block;
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        border-radius: 0 0 25px 0;
+        position: absolute;
+        top: 0;   /* Setzt das Menü direkt an den oberen Rand */
+        left: 0;  /* Setzt das Menü direkt an den linken Rand */
+        padding: 10px; /* Optionaler Abstand für ein besseres Aussehen */
+        margin: 0;      /* Verhindert zusätzliche Abstände */
+        cursor: pointer; /* Hand-Cursor bei Hover */
+    }
+}
+
+/* Zentrierung und Abstandsanpassung für kleine Bildschirme */
+@media (max-width: 540px) {
+    h1, p {
+        text-align: center;
+        margin-left: 10vw; /* Auf kleinen Bildschirmen etwas größere Ränder */
+        margin-right: 10vw;
+    }
+}
+
+@media (max-width: 470px) {
+    nav {
+        position: absolute;   /* Positionierung anpassen */
+        top: -30px;
+        left: -20px;
+        background-color: #000000;
+        padding: 0;          /* Padding entfernen */
+        border-radius: 0 0 25px 0;
+        width: 50%;         /* Breite auf 100% setzen */
+    }
+
+    nav a {
+        font-size: 30px; /* Setze die gewünschte Schriftgröße für die Links */
+    }
+
+    h1 {
+        font-size: 50px; /* Schriftgröße anpassen */
+    }
+}
+
+@media (max-width: 600px) {
+    .Ducks-Logo {
+        width: 100px;
+        bottom: -70px; /* Anpassung für kleinere Bildschirme */
+    }
+
+    .partner-heading {
+        font-size: 35px; /* Kleinere Schriftgröße auf sehr kleinen Bildschirmen */
+    }
+}
+
+.grid_container {
+    width: 70%; /* Verkleinert den Container */
+    margin: 20px auto; /* Zentrale Ausrichtung und etwas Abstand */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten für große Bildschirme */
+    gap: 15px; /* Abstand zwischen den Grid-Items */
+    margin-top: 50px;
+    padding: 0 20px; /* Fügt links und rechts einen leichten Abstand hinzu */
+}
+
+/* Grid Items */
+.grid_item {
+    background-color: rgb(88, 88, 88);
+    border-radius: 25px; /* Abgerundete Ecken */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Schatten */
+    transition: transform 0.3s; /* Übergangseffekt für Hover */
+    position: relative; /* Positionierung für absolute Elemente */
+    overflow: hidden; /* Verstecken von Überlauf, falls nötig */
+    padding: 5px; /* Optional: Padding hinzufügen */
+}
+
+/* Höhe für quadratische Items */
+.grid_item::before {
+    content: "";
+    display: block;
+    padding-top: 80%; /* Verhältnis von 0.8:1 für kleinere Items */
+}
+
+.grid_item img {
+    position: absolute;
+    top: 50%; /* Zentrieren vertikal */
+    left: 50%; /* Zentrieren horizontal */
+    width: 90%; /* Breite reduzieren */
+    height: auto; /* Höhe automatisch anpassen */
+    transform: translate(-50%, -50%); /* Zentrieren des Bildes */
+    object-fit: cover; /* Bilder skalieren ohne Verzerrung */
+    border-radius: 10px; /* Rundungen beibehalten */
+    transition: transform 0.3s; /* Sanfte Übergangsanimation für die Bildskalierung */
+}
+
+.grid_item:hover img {
+    transform: translate(-50%, -50%) scale(1.1); /* Vergrößern beim Hover */
+}
+
+.grid_item:hover {
+    transform: scale(1.05); /* Vergrößern des Grid-Items beim Hover */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 900px) {
+    .grid_container {
+        grid-template-columns: repeat(2, 1fr); /* 2 Spalten für mittlere Bildschirme */
+    }
+
+    .grid_item img {
+        width: 100%; /* Auf mobilen Geräten wird die Bildgröße größer */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid_container {
+        grid-template-columns: repeat(2, 1fr); /* 1 Spalte für kleinere Bildschirme */
+        gap: 10px; /* Weniger Abstand zwischen den Items */
+    }
+
+    .grid_item {
+        margin: 0 2px; /* Weniger Abstand an den Seiten für größere Items */
+        border-radius: 10px;
+    }
+
+    .grid_item img {
+        width: 100%; /* Auf kleinen Bildschirmen wird das Bild auf die gesamte Breite skaliert */
+    }
+}
+
+
+/* ------------------------------------------------- IMPRESSUM -------------------------------*/
+.impressum-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Höhe des Containers anpassen */
+    background-image: url('/images/Impressum-Banner.png'); /* Hintergrundbild */
+    background-size: cover; /* Hintergrundbild füllt den Container */
+    background-position: center; /* Hintergrundbild wird zentriert */
+    display: flex;
+    flex-direction: column; /* Vertikale Anordnung der Elemente */
+    justify-content: flex-start; /* Elemente nach oben ausrichten */
+    align-items: center; /* Zentriere Logos und Links horizontal */
+    padding-top: 10px; /* Abstand zum oberen Rand */
+}
+
+.small-images-container {
+    display: flex; /* Flexbox für horizontale Anordnung der Logos */
+    justify-content: center; /* Logos horizontal zentrieren */
+    align-items: center; /* Beide Logos auf gleicher Höhe */
+    margin-bottom: 10px; /* Platz für Links unterhalb der Logos */
+}
+
+.ducks-logo-impressum {
+    width: 350px; /* Größeres Ducks-Logo */
+    height: auto; /* Höhe wird automatisch angepasst */
+    object-fit: contain;
+    margin-left: -95px;
+    margin-right: -70px; /* Minimaler Abstand zwischen den Logos */
+}
+
+.small-image {
+    width: 100px; /* Zweites Logo bleibt kleiner */
+    height: auto; /* Höhe wird automatisch angepasst */
+    object-fit: contain;
+}
+
+.Askö-logo-impressum{
+    width: 200px; /* Zweites Logo bleibt kleiner */
+    height: auto; /* Höhe wird automatisch angepasst */
+    object-fit: contain;
+    margin-top: 8px;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center; /* Links horizontal zentrieren */
+    position: absolute; /* Absolut positioniert für unteren Rand */
+    bottom: 10px; /* 10px vom unteren Rand des Containers */
+    left: 50%; /* Zentriert in der Breite */
+    transform: translateX(-50%); /* Verschiebt es um die Hälfte seiner Breite */
+    font-size: 12px; /* Kleinere Schriftgröße für Links */
+    font-family: Arial Black;
+    margin-top: 0; /* Stelle sicher, dass der Abstand positiv ist */
+}
+.impressum-link {
+    margin: 0 5px; /* Abstand zwischen den Links */
+    text-decoration: none;
+    color: rgb(201, 201, 201); /* Schriftfarbe auf weiß setzen */
+    position: relative; /* Für das Pseudo-Element */
+}
+
+.impressum-link::after {
+    content: ""; /* Pseudo-Element für den Unterstrich */
+    position: absolute;
+    left: 0; /* Beginnt am linken Rand */
+    bottom: -2px; /* Positionierung unter dem Text */
+    width: 100%; /* Volle Breite des Links */
+    height: 1.5px; /* Konstante Höhe des Unterstrichs, dünn halten */
+    background-color: gold; /* Farbe des Unterstrichs */
+    transform: scaleX(0); /* Startet als unsichtbar */
+    transform-origin: left; /* Ursprung für die Skalierung */
+    transition: transform 0.3s ease; /* Animation für den Übergang */
+}
+
+.impressum-link:hover::after {
+    transform: scaleX(1); /* Unterstrich erscheint von links nach rechts */
+}
+
+.impressum-link:hover {
+    color: white; /* Schriftfarbe beim Hover */
+}
+
+.links-images-container {
+    display: flex; /* Flexbox für horizontale Anordnung */
+    justify-content: center; /* Elemente horizontal zentrieren */
+    align-items: center; /* Elemente vertikal ausrichten */
+    margin-bottom: 40px; /* Erhöhe den Abstand nach unten für mehr Platz */
+}
+
+.link-image {
+    display: flex; /* Um das Bild und den Text auszurichten */
+    align-items: center; /* Bild und Text vertikal zentrieren */
+    margin: 0 15px; /* Abstand zwischen den Links */
+    text-decoration: none; /* Unterstrich entfernen */
+    color: rgb(201, 201, 201); /* Textfarbe */
+    font-size: 14px; /* Schriftgröße */
+    font-family: Arial, sans-serif; /* Schriftart */
+    transition: color 0.3s; /* Sanfter Übergang für die Textfarbe */
+}
+
+.link-image-img {
+    width: 30px; /* Größe der Bilder */
+    height: 30px; /* Höhe konsistent halten */
+    margin-right: 5px; /* Abstand zwischen Bild und Text */
+    object-fit: contain; /* Seitenverhältnis beibehalten */
+    margin-top: -10px;
+    transition: transform 0.3s; /* Sanfter Übergang für die Bildgröße */
+}
+
+.link-image:hover {
+    color: white; /* Farbe beim Hover ändern */
+}
+
+.link-image-img:hover {
+    transform: scale(1.2); /* Bild beim Hover um 20% vergrößern */
+}
+
+.links-container {
+    margin-top: -10px; /* Negative Marge, um die Links weiter nach oben zu bringen */
+}
+
+@media (max-width: 768px) {
+    .links-container {
+        bottom: 5px; /* Weniger Abstand vom unteren Rand */
+    }
+
+    .links-container {
+        font-size: 10px; /* Kleinere Schriftgröße für Links auf Tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .ducks-logo-impressum{
+        width: 200px;
+        margin-left: -35px;
+        margin-right: -40px; /* Minimaler Abstand zwischen den Logos */
+    }
+
+    .small-image{
+        width: 75px;
+    }
+
+    .Askö-logo-impressum{
+        width: 120px;
+    }
+
+    .impressum-container{
+        height: 150px;
+    }
+
+    .link-image-img{
+        width: 20px; /* Größe der Bilder */
+        height: 20px; /* Höhe konsistent halten */
+        margin-top: -18px;
+    }
+
+    .impressum-container{
+        height: 180px;
+    }
+}
+
+
+

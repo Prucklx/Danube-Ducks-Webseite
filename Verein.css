@@ -1,0 +1,194 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    background-color: black; /* Schwarzer Hintergrund für den Header */
+    transition: background-color 0.3s ease;
+    height: 60px; /* Höhe des Headers reduziert auf 60px */
+}
+
+
+/* ------------------------- Header Styling ------------------------- */
+
+h1 {
+    font-family: Arial Black;
+    text-align: center; /* Zentriert den Text */
+    font-size: 70px; /* Schriftgröße anpassen */
+    font-weight: bold; /* Fettdruck */
+    margin-bottom: 20px; /* Abstand zum Grid-Container */
+    color: #000000; /* Farbe der Schrift */
+    position: relative; /* Position für das Pseudo-Element */
+    margin: 50px; /* Kein Standardabstand */
+    padding: 20px; /* Innenabstand um den Container herum */
+    margin-top: 90px;
+}
+
+/* Pseudo-Element für den goldenen Unterstrich */
+h1::after {
+    content: ''; /* Inhalt für das Pseudo-Element */
+    display: block; /* Block-Element, um die Unterstreichung zu erstellen */
+    width: 100%; /* Breite auf 100% des Elternelements */
+    height: 4px; /* Dicke der Unterstreichung */
+    background-color: gold; /* Farbe der Unterstreichung */
+    position: absolute; /* Absolut positioniert in Bezug auf das Eltern-Element */
+    left: 50%; /* Am linken Rand auf die Mitte setzen */
+    transform: translateX(-50%); /* Verschiebung um die halbe Breite des Elements, um es zu zentrieren */
+    bottom: -10px; /* Abstand nach unten vom Text */
+}
+
+.header_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.Ducks-Logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: -90px; /* Anpassung: Logo etwas weiter nach unten verschoben */
+    right: 20px; /* Logo ganz rechts platziert */
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-color3);
+    text-decoration: none;
+    position: relative;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+nav a:hover {
+    color: var(--secondary-text-color);
+}
+
+nav a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: var(--text-color1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 150ms ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+#toggle_button {
+    display: none;
+}
+
+label[for="toggle_button"] {
+    display: none;
+}
+
+label[for="toggle_button"] span {
+    font-size: 40px;
+}
+
+@media (max-width: 823px) {
+    nav {
+        position: absolute;   /* Positionierung anpassen */
+        top: -30px;
+        left: -20px;
+        background-color: #000000;
+        padding: 0;          /* Padding entfernen */
+        border-radius: 0 0 25px 0;
+        width: 40%;         /* Breite auf 100% setzen */
+    }
+
+    nav a {
+        font-size: 30px; /* Setze die gewünschte Schriftgröße für die Links */
+    }
+
+    nav ul {
+        display: none; /* Standardmäßig verstecken */
+        flex-direction: column; /* Vertikale Anordnung */
+        gap: 30px; /* Abstand zwischen den Links */
+        padding: 0; /* Kein Padding */
+        margin: 0; /* Kein Margin */
+    }
+
+    #toggle_button:checked + label + ul {
+        display: flex;
+        padding-top: 70px;  /* Hier kannst du Padding hinzufügen, wenn nötig */
+    }
+
+    /* Positionierung des Hamburger-Menüs auf kleinen Bildschirmen */
+    label[for="toggle_button"] {
+        display: block;
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        border-radius: 0 0 25px 0;
+        position: absolute;
+        top: 0;   /* Setzt das Menü direkt an den oberen Rand */
+        left: 0;  /* Setzt das Menü direkt an den linken Rand */
+        padding: 10px; /* Optionaler Abstand für ein besseres Aussehen */
+        margin: 0;      /* Verhindert zusätzliche Abstände */
+        cursor: pointer; /* Hand-Cursor bei Hover */
+    }
+}
+
+/* Zentrierung und Abstandsanpassung für kleine Bildschirme */
+@media (max-width: 540px) {
+    h1, p {
+        text-align: center;
+        margin-left: 10vw; /* Auf kleinen Bildschirmen etwas größere Ränder */
+        margin-right: 10vw;
+    }
+}
+
+@media (max-width: 470px) {
+    nav {
+        position: absolute;   /* Positionierung anpassen */
+        top: -30px;
+        left: -20px;
+        background-color: #000000;
+        padding: 0;          /* Padding entfernen */
+        border-radius: 0 0 25px 0;
+        width: 50%;         /* Breite auf 100% setzen */
+    }
+
+    nav a {
+        font-size: 30px; /* Setze die gewünschte Schriftgröße für die Links */
+    }
+
+    h1 {
+        font-size: 50px; /* Schriftgröße anpassen */
+    }
+}
+
+@media (max-width: 600px) {
+    .Ducks-Logo {
+        width: 100px;
+        bottom: -70px; /* Anpassung für kleinere Bildschirme */
+    }
+
+    h1 {
+        font-size: 35px; /* Kleinere Schriftgröße auf sehr kleinen Bildschirmen */
+    }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danube Ducks Linz</title>
+    <link rel="stylesheet" href="general_settings.css">
+    <link rel="stylesheet" href="Spielplan-Oberliga.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+</head>
+<body>
+    <header>
+        <div class="header_text">
+            <nav>
+                <input type="checkbox" id="toggle_button">
+                <label for="toggle_button">
+                    <i class="fas fa-bars"></i> <!-- Hamburger-Symbol von Font Awesome -->
+                </label>
+                <ul>
+                    <li><a href="index.html" onclick="toggleMobileMenue()">
+                        <i class="fas fa-home"></i> <!-- Haussymbol -->
+                    </a></li>
+                    <li><a href="Spielplan-Oberliga.html" onclick="toggleMobileMenue()">OOAHOL</a></li>
+                    <li><a href="Spielplan-Unterliga.html" onclick="toggleMobileMenue()">OOAHUL</a></li>
+                    <li><a href="UnserTeam.html" onclick="toggleMobileMenue()">Unser Team</a></li>
+                    <li><a href="Partner.html" onclick="toggleMobileMenue()">Partner</a></li>
+                    <li><a href="Verein.html" onclick="toggleMobileMenue()">Verein</a></li>
+                    <li><a href="JoinUs.html" onclick="toggleMobileMenue()">Join Us</a></li>
+                </ul>
+            </nav>
+            <img src="/images/Ducks-Logo-Header.png" alt="Danube Ducks Logo" class="Ducks-Logo">
+        </div>
+    </header>
+
+    <h1>OÖ AHL OBERLIGA</h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Uhrzeit</th>
+                    <th class="heim">
+                        <span>Heim</span>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th class="gast">
+                        <span>Gast</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="bold">15.11.2024</td>
+                    <td>20:10</td>
+                    <td>
+                        <div class="team-container team-container-heim">
+                            <span>ASKÖ EV Danube Ducks Linz</span>
+                        </div>
+                    </td>
+                    <td><img src="images/DL_TABELLE.png" alt="Danube Ducks Logo" class="team-logo"></td>
+                    <td class="result">-:-</td>
+                    <td><img src="images/IP_TABELLE.png" alt="Innviertel Penguins Logo" class="team-logo"></td>
+                    <td>
+                        <div class="team-container team-container-gast">
+                            <span>Innviertel Penguins</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bold">23.11.2024</td>
+                    <td>19:30</td>
+                    <td>
+                        <div class="team-container team-container-heim">
+                            <span>EHC Fire on Ice Wels 2</span>
+                        </div>
+                    </td>
+                    <td><img src="images/FOI_TABELLE.png" alt="Danube Ducks Logo" class="team-logo"></td>
+                    <td class="result">-:-</td>
+                    <td><img src="images/DL_TABELLE.png" alt="Innviertel Penguins Logo" class="team-logo"></td>
+                    <td>
+                        <div class="team-container team-container-gast">
+                            <span>ASKÖ EV Danube Ducks Linz</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bold">01.12.2024</td>
+                    <td>16:25</td>
+                    <td>
+                        <div class="team-container team-container-heim">
+                            <span>ASKÖ EV Danube Ducks Linz</span>
+                        </div>
+                    </td>
+                    <td><img src="images/DL_TABELLE.png" alt="Danube Ducks Logo" class="team-logo"></td>
+                    <td class="result">-:-</td>
+                    <td><img src="images/VAK_TABELLE.png" alt="Innviertel Penguins Logo" class="team-logo"></td>
+                    <td>
+                        <div class="team-container team-container-gast">
+                            <span>EHC KIWI Voralpenkings 2</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bold">15.12.2024</td>
+                    <td>18:45</td>
+                    <td>
+                        <div class="team-container team-container-heim">
+                            <span>UEHV RAUCH Technology Sharks 3</span>
+                        </div>
+                    </td>
+                    <td><img src="images/SHARKS_TABELLE.png" alt="Danube Ducks Logo" class="team-logo"></td>
+                    <td class="result">-:-</td>
+                    <td><img src="images/DL_TABELLE.png" alt="Innviertel Penguins Logo" class="team-logo"></td>
+                    <td>
+                        <div class="team-container team-container-gast">
+                            <span>ASKÖ EV Danube Ducks Linz</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bold">20.12.2024</td>
+                    <td>20:10</td>
+                    <td>
+                        <div class="team-container team-container-heim">
+                            <span>ASKÖ EV Danube Ducks Linz</span>
+                        </div>
+                    </td>
+                    <td><img src="images/DL_TABELLE.png" alt="Danube Ducks Logo" class="team-logo"></td>
+                    <td class="result">-:-</td>
+                    <td><img src="images/IT_TABELLE.png" alt="Innviertel Penguins Logo" class="team-logo"></td>
+                    <td>
+                        <div class="team-container team-container-gast">
+                            <span>EHC Haidlmair Ice-Tigers ASKÖ Kirchdorf</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bold">11.01.2025</td>
+                    <td>20:45</td>
+                    <td>
+                        <div class="team-container team-container-heim">
+                            <span>ATSV Steyr Panthers 2</span>
+                        </div>
+                    </td>
+                    <td><img src="images/SP_TABELLE.png" alt="Danube Ducks Logo" class="team-logo"></td>
+                    <td class="result">-:-</td>
+                    <td><img src="images/DL_TABELLE.png" alt="Innviertel Penguins Logo" class="team-logo"></td>
+                    <td>
+                        <div class="team-container team-container-gast">
+                            <span>ASKÖ EV Danube Ducks Linz</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bold">16.01.2025</td>
+                    <td>19:55</td>
+                    <td>
+                        <div class="team-container team-container-heim">
+                            <span>ASKÖ EV Danube Ducks Linz</span>
+                        </div>
+                    </td>
+                    <td><img src="images/DL_TABELLE.png" alt="Danube Ducks Logo" class="team-logo"></td>
+                    <td class="result">-:-</td>
+                    <td><img src="images/PJ_TABELLE.png" alt="Innviertel Penguins Logo" class="team-logo"></td>
+                    <td>
+                        <div class="team-container team-container-gast">
+                            <span>ASKÖ EHC Puckjäger Traun 2</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bold">25.01.2025</td>
+                    <td>17:15</td>
+                    <td>
+                        <div class="team-container team-container-heim">
+                            <span>ECU Amstettner Wölfe 3</span>
+                        </div>
+                    </td>
+                    <td><img src="images/ECU_TABELLE.png" alt="Danube Ducks Logo" class="team-logo"></td>
+                    <td class="result">-:-</td>
+                    <td><img src="images/DL_TABELLE.png" alt="Innviertel Penguins Logo" class="team-logo"></td>
+                    <td>
+                        <div class="team-container team-container-gast">
+                            <span>ASKÖ EV Danube Ducks Linz</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- -----------------------------------------IMPRESSUM--------------------------------------------- -->
+ 
+<div class="impressum-container">
+    <!-- Container für die zwei kleineren Bilder -->
+    <div class="small-images-container">
+        <img src="/images/Ducks-Logo.png" alt="Bild 1" class="ducks-logo-impressum">
+        <img src="/images/OÖEHV.png" alt="Bild 2" class="small-image">
+        <img src="/images/Askö.png" alt="Bild 2" class="Askö-logo-impressum">
+    </div>
+
+        <!-- Container für die neuen Links mit Bildern -->
+<div class="links-images-container">
+    <a href="https://www.instagram.com/danubeduckslinz/" class="link-image">
+        <img src="/images/Insta.png" alt="Link 1 Image" class="link-image-img">
+    </a>
+    <a href="https://www.facebook.com/DanubeDucksLinz/" class="link-image">
+        <img src="/images/Facebook.png" alt="Link 2 Image" class="link-image-img">
+    </a>
+    <a href="https://www.youtube.com/watch?v=6xQhrCPxgXQ&t=3570s" class="link-image">
+        <img src="/images/Youtube.png" alt="Link 2 Image" class="link-image-img">
+    </a>
+</div>
+
+    <!-- Container für die Links -->
+    <div class="links-container">
+        <a href="Datenschutz.html" class="impressum-link">Datenschutz</a>
+        <a href="Impressum.html" class="impressum-link">Impressum</a>
+    </div>
+</div>
+    
+    
+    

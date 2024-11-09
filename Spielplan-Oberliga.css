@@ -1,0 +1,465 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    background-color: black; /* Schwarzer Hintergrund für den Header */
+    transition: background-color 0.3s ease;
+    height: 60px; /* Höhe des Headers reduziert auf 60px */
+}
+
+
+/* ------------------------- Header Styling ------------------------- */
+
+h1 {
+    text-align: center; /* Zentriert den Text */
+    font-size: 80px; /* Schriftgröße anpassen */
+    font-weight: bold; /* Fettdruck */
+    margin-bottom: 20px; /* Abstand zum Grid-Container */
+    color: #000000; /* Farbe der Schrift */
+    position: relative; /* Position für das Pseudo-Element */
+    margin: 50px; /* Kein Standardabstand */
+    padding: 20px; /* Innenabstand um den Container herum */
+    margin-top: 90px;
+}
+
+/* Pseudo-Element für den goldenen Unterstrich */
+h1::after {
+    content: ''; /* Inhalt für das Pseudo-Element */
+    display: block; /* Block-Element, um die Unterstreichung zu erstellen */
+    width: 100%; /* Breite auf 100% des Elternelements */
+    height: 4px; /* Dicke der Unterstreichung */
+    background-color: gold; /* Farbe der Unterstreichung */
+    position: absolute; /* Absolut positioniert in Bezug auf das Eltern-Element */
+    left: 50%; /* Am linken Rand auf die Mitte setzen */
+    transform: translateX(-50%); /* Verschiebung um die halbe Breite des Elements, um es zu zentrieren */
+    bottom: -10px; /* Abstand nach unten vom Text */
+}
+
+.header_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.Ducks-Logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: -90px; /* Anpassung: Logo etwas weiter nach unten verschoben */
+    right: 20px; /* Logo ganz rechts platziert */
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-color3);
+    text-decoration: none;
+    position: relative;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+nav a:hover {
+    color: var(--secondary-text-color);
+}
+
+nav a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: var(--text-color1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 150ms ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+#toggle_button {
+    display: none;
+}
+
+label[for="toggle_button"] {
+    display: none;
+}
+
+label[for="toggle_button"] span {
+    font-size: 40px;
+}
+
+@media (max-width: 823px) {
+    nav {
+        position: absolute;   /* Positionierung anpassen */
+        top: -30px;
+        left: -20px;
+        background-color: #000000;
+        padding: 0;          /* Padding entfernen */
+        border-radius: 0 0 25px 0;
+        width: 40%;         /* Breite auf 100% setzen */
+    }
+
+    nav a {
+        font-size: 30px; /* Setze die gewünschte Schriftgröße für die Links */
+    }
+
+    nav ul {
+        display: none; /* Standardmäßig verstecken */
+        flex-direction: column; /* Vertikale Anordnung */
+        gap: 30px; /* Abstand zwischen den Links */
+        padding: 0; /* Kein Padding */
+        margin: 0; /* Kein Margin */
+    }
+
+    #toggle_button:checked + label + ul {
+        display: flex;
+        padding-top: 70px;  /* Hier kannst du Padding hinzufügen, wenn nötig */
+    }
+
+    /* Positionierung des Hamburger-Menüs auf kleinen Bildschirmen */
+    label[for="toggle_button"] {
+        display: block;
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        border-radius: 0 0 25px 0;
+        position: absolute;
+        top: 0;   /* Setzt das Menü direkt an den oberen Rand */
+        left: 0;  /* Setzt das Menü direkt an den linken Rand */
+        padding: 10px; /* Optionaler Abstand für ein besseres Aussehen */
+        margin: 0;      /* Verhindert zusätzliche Abstände */
+        cursor: pointer; /* Hand-Cursor bei Hover */
+    }
+}
+
+/* Zentrierung und Abstandsanpassung für kleine Bildschirme */
+@media (max-width: 540px) {
+    h1, p {
+        text-align: center;
+        margin-left: 10vw; /* Auf kleinen Bildschirmen etwas größere Ränder */
+        margin-right: 10vw;
+    }
+}
+
+@media (max-width: 470px) {
+    nav {
+        position: absolute;   /* Positionierung anpassen */
+        top: -30px;
+        left: -20px;
+        background-color: #000000;
+        padding: 0;          /* Padding entfernen */
+        border-radius: 0 0 25px 0;
+        width: 50%;         /* Breite auf 100% setzen */
+    }
+
+    nav a {
+        font-size: 30px; /* Setze die gewünschte Schriftgröße für die Links */
+    }
+
+    h1 {
+        font-size: 50px; /* Schriftgröße anpassen */
+    }
+}
+
+@media (max-width: 600px) {
+    .Ducks-Logo {
+        width: 100px;
+        bottom: -70px; /* Anpassung für kleinere Bildschirme */
+    }
+
+    h1 {
+        font-size: 35px; /* Kleinere Schriftgröße auf sehr kleinen Bildschirmen */
+    }
+}
+
+
+/* ------------------Tabelle-------------------------------------*/
+
+table {
+    width: 100%; /* Tabelle nimmt 100% der Breite ein */
+    border-collapse: collapse; /* Verhindert doppelte Ränder */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+thead th {
+    background-color: rgb(0, 0, 0);
+    color: gold;
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+    /* Entfernen der Standard-Ränder */
+    border-top: none;
+    border-bottom: none;
+}
+
+thead th:not(.heim):not(.gast) {
+    border-bottom: 1px solid #ddd; /* Setzt die horizontale Linie für andere Header-Zellen */
+}
+
+/* Für die Heim- und Gast-Header */
+thead th.heim, thead th.gast {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+thead th.heim {
+    align-items: flex-end; /* Heimteamname und Logo nach rechts verschieben */
+}
+
+thead th.gast {
+    align-items: flex-start; /* Gastteamname und Logo nach links verschieben */
+}
+
+tbody td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Horizontale Trennlinie zwischen den Zeilen */
+}
+
+.team-container {
+    display: flex;               /* Flexbox für vertikale Ausrichtung */
+    flex-direction: column;      /* Teamname und Logo untereinander anordnen */
+    align-items: center;         /* Horizontale Zentrierung der Elemente */
+    justify-content: center;     /* Vertikale Zentrierung der Elemente */
+    gap: 2px;                    /* Minimaler Abstand zwischen Teamnamen und Logo */
+}
+
+.team-container-heim {
+    align-items: flex-end;       /* Teamnamen nach rechts verschieben */
+}
+
+.team-container-gast {
+    align-items: flex-start;     /* Teamnamen nach links verschieben */
+}
+
+.team-logo {
+    width: 50px;  /* Größe der Logos */
+    height: 50px; /* Größe der Logos */
+    margin-left: 0; /* Kein Abstand zwischen Teamnamen und Logo */
+    vertical-align: middle; /* Ausrichtung des Logos mittig */
+}
+
+.result {
+    font-weight: bold; /* Macht das Ergebnis fett */
+}
+
+.bold {
+    font-weight: bold; /* Fett für das Datum */
+}
+
+/* Container für die Tabelle mit Scrollen bei kleinen Bildschirmen */
+.table-container {
+    width: 90%; /* Setzt die Breite der Tabelle auf 90% der Bildschirmbreite */
+    margin: 0 auto; /* Zentriert die Tabelle horizontal */
+    overflow-x: auto; /* Ermöglicht das horizontale Scrollen bei kleinen Bildschirmen */
+    -webkit-overflow-scrolling: touch; /* Glattes Scrollen auf Touch-Geräten */
+    padding: 0 5%; /* Fügt einen Abstand von 5% auf der linken und rechten Seite hinzu */
+}
+
+/* Auf allen Bildschirmgrößen gleich, keine Umstellung bei kleinen Bildschirmen */
+@media (max-width: 823px) {
+    /* Keine Anpassung der Tabelle für kleinere Bildschirmgrößen */
+    table {
+        width: 100%; /* Tabelle bleibt gleich */
+    }
+}
+
+@media (max-width: 470px) {
+    /* Keine Anpassung der Tabelle für kleinere Bildschirmgrößen */
+    table {
+        width: 100%; /* Tabelle bleibt gleich */
+    }
+}
+
+/*----------------------Impressum----------------------------------------*/
+
+.impressum-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Höhe des Containers anpassen */
+    background-image: url('/images/Impressum-Banner.png'); /* Hintergrundbild */
+    background-size: cover; /* Hintergrundbild füllt den Container */
+    background-position: center; /* Hintergrundbild wird zentriert */
+    display: flex;
+    flex-direction: column; /* Vertikale Anordnung der Elemente */
+    justify-content: flex-start; /* Elemente nach oben ausrichten */
+    align-items: center; /* Zentriere Logos und Links horizontal */
+    padding-top: 10px; /* Abstand zum oberen Rand */
+    margin-top: 120px;
+}
+
+.small-images-container {
+    display: flex; /* Flexbox für horizontale Anordnung der Logos */
+    justify-content: center; /* Logos horizontal zentrieren */
+    align-items: center; /* Beide Logos auf gleicher Höhe */
+    margin-bottom: 10px; /* Platz für Links unterhalb der Logos */
+}
+
+.ducks-logo-impressum {
+    width: 350px; /* Größeres Ducks-Logo */
+    height: auto; /* Höhe wird automatisch angepasst */
+    object-fit: contain;
+    margin-left: -95px;
+    margin-right: -70px; /* Minimaler Abstand zwischen den Logos */
+}
+
+.small-image {
+    width: 100px; /* Zweites Logo bleibt kleiner */
+    height: auto; /* Höhe wird automatisch angepasst */
+    object-fit: contain;
+}
+
+.Askö-logo-impressum{
+    width: 200px; /* Zweites Logo bleibt kleiner */
+    height: auto; /* Höhe wird automatisch angepasst */
+    object-fit: contain;
+    margin-top: 8px;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center; /* Links horizontal zentrieren */
+    position: absolute; /* Absolut positioniert für unteren Rand */
+    bottom: 10px; /* 10px vom unteren Rand des Containers */
+    left: 50%; /* Zentriert in der Breite */
+    transform: translateX(-50%); /* Verschiebt es um die Hälfte seiner Breite */
+    font-size: 12px; /* Kleinere Schriftgröße für Links */
+    font-family: Arial Black;
+    margin-top: 0; /* Stelle sicher, dass der Abstand positiv ist */
+}
+.impressum-link {
+    margin: 0 5px; /* Abstand zwischen den Links */
+    text-decoration: none;
+    color: rgb(201, 201, 201); /* Schriftfarbe auf weiß setzen */
+    position: relative; /* Für das Pseudo-Element */
+}
+
+.impressum-link::after {
+    content: ""; /* Pseudo-Element für den Unterstrich */
+    position: absolute;
+    left: 0; /* Beginnt am linken Rand */
+    bottom: -2px; /* Positionierung unter dem Text */
+    width: 100%; /* Volle Breite des Links */
+    height: 1.5px; /* Konstante Höhe des Unterstrichs, dünn halten */
+    background-color: gold; /* Farbe des Unterstrichs */
+    transform: scaleX(0); /* Startet als unsichtbar */
+    transform-origin: left; /* Ursprung für die Skalierung */
+    transition: transform 0.3s ease; /* Animation für den Übergang */
+}
+
+.impressum-link:hover::after {
+    transform: scaleX(1); /* Unterstrich erscheint von links nach rechts */
+}
+
+.impressum-link:hover {
+    color: white; /* Schriftfarbe beim Hover */
+}
+
+.links-images-container {
+    display: flex; /* Flexbox für horizontale Anordnung */
+    justify-content: center; /* Elemente horizontal zentrieren */
+    align-items: center; /* Elemente vertikal ausrichten */
+    margin-bottom: 40px; /* Erhöhe den Abstand nach unten für mehr Platz */
+}
+
+.link-image {
+    display: flex; /* Um das Bild und den Text auszurichten */
+    align-items: center; /* Bild und Text vertikal zentrieren */
+    margin: 0 15px; /* Abstand zwischen den Links */
+    text-decoration: none; /* Unterstrich entfernen */
+    color: rgb(201, 201, 201); /* Textfarbe */
+    font-size: 14px; /* Schriftgröße */
+    font-family: Arial, sans-serif; /* Schriftart */
+    transition: color 0.3s; /* Sanfter Übergang für die Textfarbe */
+}
+
+.link-image-img {
+    width: 30px; /* Größe der Bilder */
+    height: 30px; /* Höhe konsistent halten */
+    margin-right: 5px; /* Abstand zwischen Bild und Text */
+    object-fit: contain; /* Seitenverhältnis beibehalten */
+    margin-top: -10px;
+    transition: transform 0.3s; /* Sanfter Übergang für die Bildgröße */
+}
+
+.link-image:hover {
+    color: white; /* Farbe beim Hover ändern */
+}
+
+.link-image-img:hover {
+    transform: scale(1.2); /* Bild beim Hover um 20% vergrößern */
+}
+
+.links-container {
+    margin-top: -10px; /* Negative Marge, um die Links weiter nach oben zu bringen */
+}
+
+@media (max-width: 768px) {
+    .links-container {
+        bottom: 5px; /* Weniger Abstand vom unteren Rand */
+    }
+
+    .links-container {
+        font-size: 10px; /* Kleinere Schriftgröße für Links auf Tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .ducks-logo-impressum{
+        width: 200px;
+        margin-left: -35px;
+        margin-right: -40px; /* Minimaler Abstand zwischen den Logos */
+    }
+
+    .small-image{
+        width: 75px;
+    }
+
+    .Askö-logo-impressum{
+        width: 120px;
+    }
+
+    .impressum-container{
+        height: 150px;
+    }
+
+    .link-image-img{
+        width: 20px; /* Größe der Bilder */
+        height: 20px; /* Höhe konsistent halten */
+        margin-top: -18px;
+    }
+
+    .impressum-container{
+        height: 180px;
+    }
+}
+
+
+
+
+
