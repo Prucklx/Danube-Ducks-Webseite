@@ -1,0 +1,45 @@
+@font-face { /*Ardestine- Ducks in HTML hinzufügen*/
+    font-family: 'Ardestine-Ducks';
+    src: url('Font/ARDESTINE-Ducks.Schrift.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    --main-brand-color: #CACACA;
+    --secondary-color: #181818; /*Grau*/
+    --light-secondary-color: #2E3744; /*Grau bisschen heller als secondary-color*/
+    --text-color1: #FFD700; /*Gold*/
+    --text-color2: #000000; /*Schwarz*/
+    --text-color3: #FFFFFF; /*Weiß*/
+    --secondary-text-color: #B3B4B6; /*Hellgrau*/
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-color: var(--text-color3);
+    font-family: 'Ardestine-Ducks', sans-serif;
+    font-size: 20px;
+    color: var(--text-color2);
+}
+h1{
+    font-size: 125px;
+    line-height: 115%;
+}
+.subheading{
+    margin-top: 25px;
+    color: var(--text-color2);
+}
+
+@media(max-width: 800px){
+    h1{
+        font-size: 12vw;
+        text-align: center;
+    }
+    .subheading{
+        text-align: center;
+    }
+}

@@ -1,0 +1,598 @@
+
+/* Header + Video ----------------------------------------*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    background-color: black; /* Schwarzer Hintergrund für den Header */
+    transition: background-color 0.3s ease;
+    height: 60px; /* Höhe des Headers reduziert auf 60px */
+}
+
+.header_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.Ducks-Logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: -90px; /* Anpassung: Logo etwas weiter nach unten verschoben */
+    right: 20px; /* Logo ganz rechts platziert */
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-color3);
+    text-decoration: none;
+    position: relative;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+nav a:hover {
+    color: var(--secondary-text-color);
+}
+
+nav a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: var(--text-color1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 150ms ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+#toggle_button {
+    display: none;
+}
+
+label[for="toggle_button"] {
+    display: none;
+}
+
+label[for="toggle_button"] span {
+    font-size: 40px;
+}
+
+.video-startseite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.landscape {
+    display: block;
+}
+
+.portrait {
+    display: none;
+}
+
+@media (max-width: 826px) {
+   .video-startseite.landscape {
+        display: none;
+    }
+
+    .video-startseite.portrait {
+        display: block;
+    }
+
+    .Ducks-Logo {
+        width: 120px;
+        bottom: -85px; /* Anpassung für kleinere Bildschirme */
+    }
+}
+
+@media (max-width: 823px) {
+    nav {
+        position: absolute;   /* Positionierung anpassen */
+        top: -30px;
+        left: -20px;
+        background-color: #000000;
+        padding: 0;          /* Padding entfernen */
+        border-radius: 0 0 25px 0;
+        width: 40%;         /* Breite auf 100% setzen */
+    }
+
+    nav a {
+        font-size: 30px; /* Setze die gewünschte Schriftgröße für die Links */
+    }
+
+    nav ul {
+        display: none; /* Standardmäßig verstecken */
+        flex-direction: column; /* Vertikale Anordnung */
+        gap: 30px; /* Abstand zwischen den Links */
+        padding: 0; /* Kein Padding */
+        margin: 0; /* Kein Margin */
+    }
+
+    #toggle_button:checked + label + ul {
+        display: flex;
+        padding-top: 70px;  /* Hier kannst du Padding hinzufügen, wenn nötig */
+    }
+
+    /* Positionierung des Hamburger-Menüs auf kleinen Bildschirmen */
+    label[for="toggle_button"] {
+        display: block;
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        border-radius: 0 0 25px 0;
+        position: absolute;
+        top: 0;   /* Setzt das Menü direkt an den oberen Rand */
+        left: 0;  /* Setzt das Menü direkt an den linken Rand */
+        padding: 10px; /* Optionaler Abstand für ein besseres Aussehen */
+        margin: 0;      /* Verhindert zusätzliche Abstände */
+        cursor: pointer; /* Hand-Cursor bei Hover */
+    }
+}
+
+@media (max-width: 470px) {
+    nav {
+        position: absolute;   /* Positionierung anpassen */
+        top: -30px;
+        left: -20px;
+        background-color: #000000;
+        padding: 0;          /* Padding entfernen */
+        border-radius: 0 0 25px 0;
+        width: 50%;         /* Breite auf 100% setzen */
+    }
+
+    nav a {
+        font-size: 30px; /* Setze die gewünschte Schriftgröße für die Links */
+    }
+}
+
+@media (max-width: 400px) {
+    .Ducks-Logo {
+        width: 100px;
+        bottom: -70px; /* Anpassung für kleinere Bildschirme */
+    }
+}
+
+section {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Section - Next Game ----------------------------------------------------------------------------*/
+
+.section-next-game {
+    display: flex;               /* Flexbox für die gesamte Sektion */
+    flex-direction: column;      /* Elemente vertikal anordnen */
+    align-items: center;         /* Horizontale Zentrierung */
+    justify-content: center;     /* Vertikale Zentrierung */
+    min-height: 100vh;           /* Die Sektion nimmt die volle Höhe des Viewports ein */
+    background-color: rgba(255, 255, 255, 1); /* Weißer Hintergrund */
+    text-align: center;          /* Text zentrieren */
+    padding: 0;                  /* Kein zusätzliches Padding, um Zentrierung zu gewährleisten */
+    margin: 0;                   /* Kein Margin */
+}
+.section-next-game h2 {
+    font-size: 90px; /* Schriftgröße */
+    margin: 0 0 85px 0;           /* Abstand unten hinzufügen */
+    position: relative; /* Damit wir die Unterstreichung positionieren können */
+}
+
+.section-next-game h2::after {
+    content: ''; /* Erzeugt ein leeres Element für die Unterstreichung */
+    display: block; /* Stellt sicher, dass das Element blockweise angezeigt wird */
+    width: 100%; /* Breite auf 100% setzen */
+    height: 5px; /* Höhe der Unterstreichung */
+    background-color: gold; /* Farbe der Unterstreichung */
+    position: absolute; /* Damit wir es unter der Überschrift positionieren können */
+    bottom: -5px; /* Positionierung unter der Überschrift */
+    left: 0; /* Von der linken Seite beginnen */
+}
+.matchup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Ducks-Logo-next-game,
+.Innviertel_Penguins-Logo {
+    width: 400px;                 /* Größe der Logos anpassen */
+    height: auto;                 /* Höhe automatisch beibehalten */
+    margin: 0 20px;               /* Abstand zwischen den Bildern */
+}
+
+.section-next-game h3 {
+    font-size: 80px; /* Größe des VS-Textes */
+    margin: 0 20px; /* Abstand zu den Bildern */
+}
+
+.vs-section {
+    display: flex;
+    flex-direction: column; /* Stellt sicher, dass "VS" und der Text vertikal angeordnet sind */
+    align-items: center; /* Zentriert den Text und "VS" */
+}
+
+.arena-location {
+    display: flex;
+    align-items: center; /* Haus-Symbol und Text bleiben nebeneinander */
+    margin-top: 30px; /* Abstand zwischen "VS" und dem Ort */
+}
+
+.arena-location span {
+    display: inline-block;
+}
+
+.arena-location .material-symbols-outlined {
+    margin-right: 5px; /* Haus-Symbol und Text haben etwas Abstand */
+}
+
+.map-link {
+    color: black;            /* Setzt die Textfarbe auf schwarz */
+    text-decoration: none;   /* Entfernt die Unterstreichung */
+    position: relative;      /* Wichtig für die Positionierung des ::after-Elements */
+}
+
+.map-link::after {
+    content: '';             /* Erzeugt ein leeres Pseudoelement */
+    display: block;          /* Block-Element für die Linie */
+    width: 0;                /* Anfangsbreite ist 0 */
+    height: 2px;             /* Höhe der Linie */
+    background-color: gold;  /* Farbe der Linie */
+    transition: width 0.3s;  /* Sanfte Übergangsanimation */
+    position: absolute;      /* Absolute Positionierung */
+    bottom: -2px;            /* Positioniert die Linie direkt unter dem Text */
+    left: 0;                 /* Beginnt von der linken Seite des Links */
+}
+
+.map-link:hover::after {
+    width: 100%;             /* Breite der Linie wird bei Hover auf 100% gesetzt */
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px; /* Verringert den Abstand zwischen den Logos und dem Timer */
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+#countdown div {
+    background-color: #000000;      /* Hintergrundfarbe der Timer-Segmente */
+    color: #fff;                 /* Textfarbe */
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 100px;
+    border: 3px solid gold;      /* Goldene Umrandung */
+    transition: all 0.3s ease-in-out;  /* Animation für eine sanfte Größenänderung */
+}
+
+#countdown span {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out; /* Sanfte Textgrößenänderung */
+}
+
+#countdown {
+    margin-top: 50px; /* Zum Beispiel 80px für mehr Abstand */
+    text-align: center; /* Zentriert den Countdown-Text */
+}
+
+@media (max-width: 840px) {
+   
+    .section-next-game {
+        min-height: auto; /* Entfernt die Mindesthöhe für kleine Bildschirme */
+        padding-bottom: 20px; /* Verringert den Abstand nach unten */
+    }
+    .section-next-game h2 {
+        font-size: 50px; /* Schriftgröße für mobile Geräte */
+    }
+    .section-next-game h3{
+        font-size: 20px;
+    }
+    .Ducks-Logo-next-game,
+    .Innviertel_Penguins-Logo {
+        width: 150px;             /* Noch kleinere Breite für sehr kleine Geräte */
+    }
+
+    .map-link {
+        font-size: 1rem;    /* Kleinere Schriftgröße für Bildschirme kleiner als 800px */
+    }
+    .arena-location{
+        margin-top: 15px;
+    }
+
+    #countdown {
+        gap: 10px; /* Weniger Abstand zwischen den Segmenten */
+    }
+
+    #countdown div {
+        padding: 10px;           /* Weniger Padding bei kleinen Bildschirmen */
+        min-width: 60px;         /* Kleinere Breite der Boxen */
+    }
+
+    #countdown span {
+        font-size: 22px;         /* Kleinere Schriftgröße für die Zahlen */
+    }
+}
+
+@media (max-width: 435px) {
+    .map-link {
+        font-size: 0.7rem;  /* Noch kleinere Schriftgröße für Bildschirme kleiner als 400px */
+    }
+}
+
+@media (max-width: 483px) {
+    #countdown {
+        font-size: 14px;         /* Weitere Verkleinerung der Schriftgröße */
+    }
+
+    #countdown div {
+        padding: 8px;            /* Noch weniger Padding */
+        min-width: 50px;         /* Weitere Anpassung der Breite */
+    }
+
+    #countdown span {
+        font-size: 20px;         /* Kleinere Schriftgröße für die Zahlen */
+    }
+}
+
+/*section - Aktuelles ------------------------------------------------------------------------------------------------------------------*/
+
+.section-news {
+    display: flex;               /* Flexbox für die gesamte Sektion */
+    flex-direction: column;      /* Elemente vertikal anordnen */
+    align-items: center;         /* Horizontale Zentrierung */
+    justify-content: center;     /* Vertikale Zentrierung */
+    min-height: 100vh;           /* Höhe der Sektion */
+    background-color: rgb(0, 0, 0); /* Hintergrundfarbe */
+    text-align: center;          /* Text zentrieren */
+}
+
+.section-news h2 {
+    font-size: 70px; /* Schriftgröße */
+    color: #fff;
+    margin: 0 0 85px 0;           /* Abstand unten hinzufügen */
+    position: relative; /* Damit wir die Unterstreichung positionieren können */
+}
+
+.section-news h2::after {
+    content: ''; /* Erzeugt ein leeres Element für die Unterstreichung */
+    display: block; /* Stellt sicher, dass das Element blockweise angezeigt wird */
+    width: 100%; /* Breite auf 100% setzen */
+    height: 5px; /* Höhe der Unterstreichung */
+    background-color: gold; /* Farbe der Unterstreichung */
+    position: absolute; /* Damit wir es unter der Überschrift positionieren können */
+    left: 0; /* Von der linken Seite beginnen */
+    bottom: -5px; /* Abstand von der Überschrift */
+}
+
+.instagram-posts {
+    display: flex;
+    justify-content: space-between; /* Gleichmäßige Verteilung der Posts */
+    gap: 20px; /* Abstand zwischen den Posts */
+    max-width: 100%; /* Container-Breite auf 100% setzen */
+    flex-wrap: wrap; /* Ermöglicht Zeilenumbruch bei kleinen Bildschirmen */
+    align-items: center; /* Posts vertikal ausrichten */
+    justify-content: center; /* Zentriert die Posts im Container */
+}
+
+/* Post-Stile */
+.Post {
+    flex: 1;
+    max-width: 600px; /* Breite der Posts für große Bildschirme */
+    min-width: 300px; /* Minimalbreite für kleine Bildschirme */
+    margin: 20px; /* Abstand um die Posts herum */
+    box-sizing: border-box; /* Padding und Border in der Breite berücksichtigen */
+    transition: transform 0.3s ease; /* Sanfter Übergang für die Transformation */
+}
+
+/* Hover-Effekt für Posts */
+.Post:hover {
+    transform: scale(1.05); /* Vergrößerung um 5% */
+}
+
+/* Für Bildschirme kleiner als 1050px */
+@media (max-width: 1050px) {
+    .instagram-posts {
+        flex-direction: column; /* Unter 1050px die Posts übereinander anordnen */
+        align-items: center;     /* Posts ebenfalls zentrieren */
+        justify-content: center; /* Posts im Container zentrieren */
+    }
+}
+
+/* Für Handydisplays */
+@media (max-width: 768px) {
+    .instagram-posts {
+        justify-content: center; /* Sicherstellen, dass die Posts im Container mittig sind */
+        padding: 0 20px; /* Leichtes Padding für mobilen Abstand */
+    }
+
+    .Post {
+        max-width: 100%; /* Posts auf volle Breite setzen */
+        margin: 10px 0; /* Weniger Abstand für kleinere Bildschirme */
+    }
+}
+
+
+
+/*--------------------Section - OOEHV-OBERLIGA ---------------------------------------*/
+
+.section-ooehv {
+    background-color: #000000;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.section-ooehv h2, .section-ooehv h3 {
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    position: relative;
+    margin-top: 40px;
+}
+
+.section-ooehv h2::after, .section-ooehv h3::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: gold;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.section-image {
+        flex: 1;
+        max-width: 30%;
+        height: auto;
+        margin: 0 5px;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 2px solid black; /* Schwarzer Rand um die Bilder */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten um die Bilder */
+}
+
+/* Optional: Verhindert, dass das erste und letzte Bild zu nah am Rand sind */
+.image-container img:first-child {
+    margin-left: 60px;
+}
+
+.image-container img:last-child {
+    margin-right: 60px;
+}
+
+.OOAHOL-OOEHV-Oberliga {
+    display: inline-block;
+    padding: 10px 20px; /* Innenabstand des Links */
+    border: 2px solid rgb(255, 255, 255); /* Schwarze Umrandung */
+    border-radius: 15px; /* Abgerundete Ecken */
+    text-decoration: none; /* Unterstreichung entfernen */
+    color: rgb(255, 255, 255); /* Textfarbe schwarz */
+    font-size: 18px; /* Schriftgröße */
+    font-weight: bold; /* Fettschrift */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Animationseffekt für box-shadow */
+    font-family: Arial Black;
+    margin-top: 20px; /* Abstand nach oben hinzufügen */
+}
+
+.OOAHOL-OOEHV-Oberliga:hover {
+    background-color: rgb(255, 255, 255); /* Hintergrundfarbe bei Hover */
+    color: rgb(0, 0, 0); /* Textfarbe bei Hover */
+    border: 2px solid gold; /* Goldene Umrandung um den Link bei Hover */
+    box-shadow: 0 0 0 5px gold; /* Goldene Umrandung um den Link */
+}
+
+
+/* --- Responsive Anpassungen --- */
+
+/* Für Bildschirme mit einer Breite von maximal 1025px */
+@media (max-width: 1025px) {
+    .section-image {
+        max-width: 100%; /* Bilder nehmen die volle Breite ein */
+        margin: 10px 0; /* Abstand zwischen den Bildern */
+        padding: 0; /* Keine Innenabstände */
+        box-sizing: border-box; /* Stellt sicher, dass das Padding innerhalb der Bildgröße bleibt */
+        border-radius: 50px; /* Abgerundete Ecken auch hier beibehalten */
+        overflow: hidden;
+    }
+
+    .image-container {
+        flex-direction: column; /* Bilder untereinander anordnen */
+        margin: 0;
+    }
+
+    /* Vergrößerter Abstand zwischen dem ersten Bild und der Überschrift */
+    .image-container img:first-child {
+        margin-top: 60px;
+    }
+
+    /* Entfernt den ursprünglichen linken und rechten Rand */
+    .image-container img:first-child, .image-container img:last-child {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Für Bildschirme mit einer Breite von maximal 768px (kleine Tablets und Handys im Querformat) */
+@media (max-width: 768px) {
+    .section-ooehv h2, .section-ooehv h3 {
+        font-size: 40px;
+    }
+
+    .section-image {
+        padding: 0; /* Keine Innenabstände */
+    }
+}
+
+/* Für Bildschirme mit einer Breite von maximal 480px (Handys im Hochformat) */
+@media (max-width: 480px) {
+    .section-image {
+        border-radius: 25px; /* Abgerundete Ecken auch hier beibehalten */
+        padding: 0; /* Keine Innenabstände */
+    }
+
+    .section-ooehv h2, .section-ooehv h3 {
+        font-size: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
