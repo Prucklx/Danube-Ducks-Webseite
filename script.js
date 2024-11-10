@@ -41,6 +41,6 @@ const countdownFunction = setInterval(function() {
     // Wenn der Countdown abgelaufen ist
     if (timeRemaining < 0) {
         clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = '<a href="https://www.ooeehv.at/landesliga-nachwuchs/ooe-liwest-ahul" target="_blank">Live-Ticker!</a>';
+        document.getElementById("countdown").innerHTML = '<a href="https://www.ooeehv.at/landesliga-nachwuchs/ooe-liwest-ahol" target="_blank">Live-Ticker!</a>';
     }
 }, 1000);
