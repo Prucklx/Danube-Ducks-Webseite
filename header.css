@@ -381,7 +381,7 @@ section {
 }
 
 .section-news h2 {
-    font-size: 70px; /* Schriftgröße */
+    font-size: 90px; /* Schriftgröße */
     color: #fff;
     margin: 0 0 85px 0;           /* Abstand unten hinzufügen */
     position: relative; /* Damit wir die Unterstreichung positionieren können */
@@ -443,9 +443,10 @@ section {
         max-width: 100%; /* Posts auf volle Breite setzen */
         margin: 10px 0; /* Weniger Abstand für kleinere Bildschirme */
     }
+    .section-news h2{
+        font-size: 50px;
+    }
 }
-
-
 
 /*--------------------Section - OOEHV-OBERLIGA ---------------------------------------*/
 
