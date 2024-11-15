@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="general_settings.css">
     <link rel="stylesheet" href="JoinUs.css">
     <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="Kontaktformular.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
 </head>
@@ -37,7 +38,7 @@
 <h1>KONTAKTFORMULAR</h1>
 
 <div class="form-container">
-    <form action="/submit-form" method="POST">
+    <form id="contactForm" action="https://formsubmit.co/danube.ducks@gmail.com" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" placeholder="Geben Sie Ihren Namen ein" required><br><br>
         
@@ -59,9 +60,9 @@
         </div>
         
         <button type="submit">Absenden</button>
+        <p id="responseMessage" style="color: green; display: none;"></p>
     </form>
 </div>
-
 
 
 
