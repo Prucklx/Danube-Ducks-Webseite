@@ -195,9 +195,58 @@ label[for="toggle_button"] span {
 
 /* ------------------Tabelle-------------------------------------*/
 
-/* ------------------Tabelle-------------------------------------*/
+th {
+    text-align: center; /* Zentriert den Text im Header */
+    vertical-align: middle; /* Zentriert den Text vertikal */
+}
 
-/* ------------------Tabelle-------------------------------------*/
+.squareL {
+    width: 40px; /* Größe des Quadrats */
+    height: 40px;
+    background-color: rgb(255, 0, 0); /* Rotes Inneres */
+    border: 2px solid rgb(255, 255, 255); /* Weißer Rand */
+    display: flex; /* Flexbox für Layout */
+    justify-content: center; /* Horizontale Zentrierung des Inhalts */
+    align-items: center; /* Vertikale Zentrierung des Inhalts */
+    color: white; /* Farbe des "L" */
+    font-size: 24px; /* Schriftgröße des "L" */
+    font-weight: bold; /* Fettgedrucktes "L" */
+    text-align: center; /* Zusätzliche Sicherstellung der Zentrierung */
+    margin: auto; /* Stellt sicher, dass das Quadrat auch mittig in der Zelle bleibt */
+    box-sizing: border-box; /* Bezieht den Rand in die Gesamtgröße ein */
+}
+
+.squareW {
+    width: 40px; /* Größe des Quadrats */
+    height: 40px;
+    background-color: rgb(21, 255, 0); /* Rotes Inneres */
+    border: 2px solid rgb(255, 255, 255); /* Weißer Rand */
+    display: flex; /* Flexbox für Layout */
+    justify-content: center; /* Horizontale Zentrierung des Inhalts */
+    align-items: center; /* Vertikale Zentrierung des Inhalts */
+    color: white; /* Farbe des "L" */
+    font-size: 24px; /* Schriftgröße des "L" */
+    font-weight: bold; /* Fettgedrucktes "L" */
+    text-align: center; /* Zusätzliche Sicherstellung der Zentrierung */
+    margin: auto; /* Stellt sicher, dass das Quadrat auch mittig in der Zelle bleibt */
+    box-sizing: border-box; /* Bezieht den Rand in die Gesamtgröße ein */
+}
+
+.squareS {
+    width: 40px; /* Größe des Quadrats */
+    height: 40px;
+    background-color: rgb(255, 255, 255); /* Rotes Inneres */
+    border: 2px solid rgb(0, 0, 0); /* Weißer Rand */
+    display: flex; /* Flexbox für Layout */
+    justify-content: center; /* Horizontale Zentrierung des Inhalts */
+    align-items: center; /* Vertikale Zentrierung des Inhalts */
+    color: white; /* Farbe des "L" */
+    font-size: 24px; /* Schriftgröße des "L" */
+    font-weight: bold; /* Fettgedrucktes "L" */
+    text-align: center; /* Zusätzliche Sicherstellung der Zentrierung */
+    margin: auto; /* Stellt sicher, dass das Quadrat auch mittig in der Zelle bleibt */
+    box-sizing: border-box; /* Bezieht den Rand in die Gesamtgröße ein */
+}
 
 table {
     width: 100%; /* Tabelle nimmt 100% der Breite ein */
