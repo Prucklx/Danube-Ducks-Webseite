@@ -118,13 +118,14 @@ label[for="toggle_button"] span {
 /* Stil für die Überschrift "Unsere Partner" */
 .partner-heading {
     text-align: center; /* Zentriert den Text */
-    font-size: 80px; /* Schriftgröße anpassen */
+    font-size: 90px; /* Schriftgröße anpassen */
     font-weight: bold; /* Fettdruck */
     margin-bottom: 20px; /* Abstand zum Grid-Container */
     color: #000000; /* Farbe der Schrift */
     position: relative; /* Position für das Pseudo-Element */
     margin: 50px; /* Kein Standardabstand */
     padding: 20px; /* Innenabstand um den Container herum */
+    margin-top: 90px;
 }
 
 /* Pseudo-Element für den goldenen Unterstrich */
