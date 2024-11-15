@@ -18,9 +18,8 @@ header {
 /* ------------------------- Header Styling ------------------------- */
 
 h1 {
-    font-family: Arial Black;
     text-align: center; /* Zentriert den Text */
-    font-size: 70px; /* Schriftgröße anpassen */
+    font-size: 80px; /* Schriftgröße anpassen */
     font-weight: bold; /* Fettdruck */
     margin-bottom: 20px; /* Abstand zum Grid-Container */
     color: #000000; /* Farbe der Schrift */
@@ -162,6 +161,14 @@ label[for="toggle_button"] span {
     }
 }
 
+@media (max-width: 440px) {
+    h1, p {
+        text-align: center;
+        margin-left: 2vw; /* Auf kleinen Bildschirmen etwas größere Ränder */
+        margin-right: 2vw;
+    }
+}
+
 @media (max-width: 470px) {
     nav {
         position: absolute;   /* Positionierung anpassen */
@@ -192,3 +199,109 @@ label[for="toggle_button"] span {
         font-size: 35px; /* Kleinere Schriftgröße auf sehr kleinen Bildschirmen */
     }
 }
+
+/* ------------------------- Kontaktformular -------------------------------------------------*/
+
+/* Zentriert das Formular und begrenzt die Breite */
+.form-container {
+    max-width: 1000px; /* Breite des Formulars anpassen */
+    margin: 0 auto;   /* Zentriert den Container */
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Sternchen für Pflichtfelder (nur für bestimmte Felder) */
+label[for="name"]::after,
+label[for="email"]::after,
+label[for="message"]::after {
+    content: "*";             
+    color: red;               
+    font-size: 1.0em;         
+    margin-right: 5px;        
+}
+
+/* Stil für Textarea (größer machen) */
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+form {
+    font-family: Arial, sans-serif;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button Stil */
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px; /* Feste Breite des Buttons */
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Datenschutz-Checkbox und Text */
+.privacy-policy {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.privacy-policy input {
+    margin-right: 10px; 
+    transform: scale(1.2);
+}
+
+.privacy-policy label {
+    font-size: 14px;
+}
+
+.privacy-policy a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.privacy-policy a:hover {
+    text-decoration: underline;
+}
+
+/* Checkbox und Button links ausrichten */
+button, .privacy-policy {
+    justify-content: flex-start; /* Links ausrichten */
+}
+
+button {
+    width: auto; /* Nur so breit wie der Inhalt */
+}
+
+
+
+
+
+

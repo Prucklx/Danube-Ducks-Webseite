@@ -34,4 +34,35 @@
         </div>
     </header>
 
-<h1>COMING SOON</h1>
+<h1>KONTAKTFORMULAR</h1>
+
+<div class="form-container">
+    <form action="/submit-form" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Geben Sie Ihren Namen ein" required><br><br>
+        
+        <label for="phone">Telefon:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="Geben Sie Ihre Telefonnummer ein"><br><br>
+        
+        <label for="email">E-Mail:</label><br>
+        <input type="email" id="email" name="email" placeholder="Geben Sie Ihre E-Mail-Adresse ein" required><br><br>
+        
+        <label for="message">Ihre Nachricht:</label><br>
+        <textarea id="message" name="message" placeholder="Geben Sie Ihre Nachricht ein" rows="4" required></textarea><br><br>
+        
+        <!-- Datenschutz Checkbox -->
+        <div class="privacy-policy">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">
+                Ich bin mit dem <a href="Datenschutz.html">Datenschutz</a> einverstanden.
+            </label>
+        </div>
+        
+        <button type="submit">Absenden</button>
+    </form>
+</div>
+
+
+
+
+
