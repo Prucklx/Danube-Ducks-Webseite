@@ -219,7 +219,7 @@ th {
 .squareW {
     width: 40px; /* Größe des Quadrats */
     height: 40px;
-    background-color: rgb(21, 255, 0); /* Rotes Inneres */
+    background-color: rgb(15, 182, 0); /* Rotes Inneres */
     border: 2px solid rgb(255, 255, 255); /* Weißer Rand */
     display: flex; /* Flexbox für Layout */
     justify-content: center; /* Horizontale Zentrierung des Inhalts */

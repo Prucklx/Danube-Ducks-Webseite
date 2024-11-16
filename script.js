@@ -19,7 +19,7 @@ window.addEventListener('scroll', function() {
 
 
 // Setze das Datum für das nächste Spiel (Jahr, Monat (0-basiert), Tag, Stunde, Minute)
-const nextGameDate = new Date("2024-11-15T20:10:00").getTime();
+const nextGameDate = new Date("2024-11-23T19:30:00").getTime();
 
 // Update den Countdown jede Sekunde
 const countdownFunction = setInterval(function() {
