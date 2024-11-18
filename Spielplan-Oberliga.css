@@ -204,7 +204,6 @@ th {
     width: 40px; /* Größe des Quadrats */
     height: 40px;
     background-color: rgb(255, 0, 0); /* Rotes Inneres */
-    border: 2px solid rgb(255, 255, 255); /* Weißer Rand */
     display: flex; /* Flexbox für Layout */
     justify-content: center; /* Horizontale Zentrierung des Inhalts */
     align-items: center; /* Vertikale Zentrierung des Inhalts */
@@ -220,7 +219,6 @@ th {
     width: 40px; /* Größe des Quadrats */
     height: 40px;
     background-color: rgb(15, 182, 0); /* Rotes Inneres */
-    border: 2px solid rgb(255, 255, 255); /* Weißer Rand */
     display: flex; /* Flexbox für Layout */
     justify-content: center; /* Horizontale Zentrierung des Inhalts */
     align-items: center; /* Vertikale Zentrierung des Inhalts */
@@ -324,6 +322,11 @@ tbody td {
 .bold {
     font-weight: bold; /* Fett für das Datum */
 }
+
+tbody tr:nth-child(even) {
+    background-color: #f1f1f1; /* Helle Grautönung für jede zweite Zeile */
+}
+
 
 /* Container für die Tabelle mit Scrollen bei kleinen Bildschirmen */
 .table-container {
