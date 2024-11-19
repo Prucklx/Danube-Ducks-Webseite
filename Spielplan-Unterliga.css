@@ -246,11 +246,45 @@ th {
     box-sizing: border-box; /* Bezieht den Rand in die Gesamtgröße ein */
 }
 
+.record-indicators {
+    display: flex;
+    gap: 2px;
+}
+
+.indicator {
+    width: 30px; /* Durchmesser des Kreises */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* Schriftgröße */
+    font-weight: bold;
+    color: white; /* Textfarbe */
+    border-radius: 50%; /* Macht die Form zu einem Kreis */
+    background-color: #ccc; /* Standardfarbe */
+    text-align: center;
+}
+
+.indicator.win {
+    background-color: green; /* Farbe für Sieg */
+}
+
+.indicator.lose {
+    background-color: red; /* Farbe für Niederlage */
+}
+
+.indicator.folgt {
+    background-color: rgb(255, 255, 255); /* Farbe für Spiele die erst passieren */
+    border: 2px solid black; /* Schwarze Umrandung */
+}
+
+
+
 table {
     width: 100%; /* Tabelle nimmt 100% der Breite ein */
     border-collapse: collapse; /* Verhindert doppelte Ränder */
     font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 20px;
 }
 
