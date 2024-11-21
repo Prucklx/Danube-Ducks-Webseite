@@ -203,7 +203,7 @@ th {
 .squareL {
     width: 40px; /* Größe des Quadrats */
     height: 40px;
-    background-color: rgb(255, 0, 0); /* Rotes Inneres */
+    background-color: red; /* Farbe für Niederlage */
     display: flex; /* Flexbox für Layout */
     justify-content: center; /* Horizontale Zentrierung des Inhalts */
     align-items: center; /* Vertikale Zentrierung des Inhalts */
@@ -218,7 +218,7 @@ th {
 .squareW {
     width: 40px; /* Größe des Quadrats */
     height: 40px;
-    background-color: rgb(15, 182, 0); /* Rotes Inneres */
+    background-color: green; /* Farbe für Sieg */
     display: flex; /* Flexbox für Layout */
     justify-content: center; /* Horizontale Zentrierung des Inhalts */
     align-items: center; /* Vertikale Zentrierung des Inhalts */
