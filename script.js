@@ -19,7 +19,7 @@ window.addEventListener('scroll', function() {
 
 
 // Setze das Datum für das nächste Spiel (Jahr, Monat (0-basiert), Tag, Stunde, Minute)
-const nextGameDate = new Date("2024-12-07T15:40:00").getTime();
+const nextGameDate = new Date("2024-12-14T19:30:00").getTime();
 
 // Update den Countdown jede Sekunde
 const countdownFunction = setInterval(function() {
@@ -41,6 +41,6 @@ const countdownFunction = setInterval(function() {
     // Wenn der Countdown abgelaufen ist
     if (timeRemaining < 0) {
         clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = '<a href="https://www.ooeehv.at/landesliga-nachwuchs/ooe-liwest-ahol" target="_blank">Live-Ticker!</a>';
+        document.getElementById("countdown").innerHTML = '<a href="https://www.ooeehv.at/landesliga-nachwuchs/ooe-liwest-ahul" target="_blank">Live-Ticker!</a>';
     }
 }, 1000);
